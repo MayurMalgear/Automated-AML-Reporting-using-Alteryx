@@ -1,0 +1,1883 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2025.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="174" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="customer_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="customer_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_customer_id" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1158" y="954" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Suspicious Transactions Report.xlsx|||Suspicious Transactions Report</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <MipTenantId />
+            <PreserveFormat>False</PreserveFormat>
+            <MipSensitivity />
+            <UNCLocal>False</UNCLocal>
+            <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Suspicious Transactions Report/High Risk Counter Party</AnnotationText>
+          <DefaultAnnotationText>Suspicious Transactions Report.xlsx
+Query=Suspicious Transactions Repo...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="762" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Transaction Data.xlsx
+Query=`Sheet2$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="transaction_id" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="customer_id" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="transaction_date" size="19" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="DateTime" />
+            <Field name="amount_gbp" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="Double" />
+            <Field name="currency" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="transaction_type" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="payment_channel" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="counterparty_country" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="counterparty_name" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="account_balance_after" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="Double" />
+            <Field name="is_international" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="Bool" />
+            <Field name="is_high_risk_country" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="Bool" />
+            <Field name="transaction_time" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Transaction Data.xlsx|||`Sheet2$`" type="Time" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Customer Data.xlsx
+Query=`Sheet2$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="customer_id" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="full_name" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="date_of_birth" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="Date" />
+            <Field name="occupation" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="annual_income" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="Double" />
+            <Field name="customer_type" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="account_open_date" size="19" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="DateTime" />
+            <Field name="pep_flag" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="Bool" />
+            <Field name="sanctions_flag" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="Bool" />
+            <Field name="risk_rating" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="V_String" />
+            <Field name="address_country" size="255" source="File: C:\Users\Mayur Malgear\Desktop\Alteryx\Github Projects\Automated AML Reporting\Customer Data.xlsx|||`Sheet2$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1626" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="1746" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="true" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="true" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Layout" selected="True" Alignment="Center" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="2034" y="954" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType>pdf</TempFileType>
+          <BatchMode value="False" />
+          <DataField>Layout</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="True" />
+          <HeaderField>Header</HeaderField>
+          <ShowFooter value="False" />
+          <PdfCefOutput value="False" />
+          <OnFirstPage value="True" />
+          <HeaderFooterEdge Distance="0" />
+          <PortraitMode value="True" />
+          <PaperType Width="595" Height="841" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="77">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1878" y="954" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#2</Connection>
+            <Connection>#1</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="ReportHeader">
+        <Position x="1962" y="954" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="HeaderText">Anti-Money Laundering Report</Value>
+          <Value name="OutputFormat">yyyy-MM-dd hh:mm:ss</Value>
+          <Value name="Language">English</Value>
+          <Value name="IncludeDate">False</Value>
+          <Value name="ImageFile">
+          </Value>
+          <Value name="OwnLogo">false</Value>
+          <Value name="IncludeImage">False</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="ReportHeader\Supporting_Macros\RHEngine.yxmc" EngineDll="Macro" EngineDllEntryPoint="ReportHeader\Supporting_Macros\RHEngine.yxmc" />
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="210" y="54" width="1836" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Automated AML risk assessment and reporting for financial transactions</Text>
+          <Font name="Times New Roman" size="27.75" style="1" />
+          <TextColor name="Black" />
+          <FillColor r="255" g="255" b="128" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2106" y="174" width="468" height="696" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[
+Summary:
+This workflow integrates customer and transaction data to perform an Anti-Money Laundering (AML) risk assessment and generate a comprehensive report. It begins by importing 'Transaction Data' and 'Customer Data' from two separate Excel files. These datasets are joined on 'customer_id' to combine transaction details with customer profiles.
+Key transformations involve calculating several risk indicators: a 'Large Transaction Compared to Income' flag, the 'DaysSinceLastTransaction', and 'Consecutive_Transactions_2Day' to identify potential structuring. It also calculates the average transaction amount per customer. A series of formula tools then derive flags for 'High_Risk_Country_Transaction', 'New_Account_High_Activity', 'Isolation_Forest_Anomaly_Flag' (based on transactions significantly exceeding average), and 'Frequent_Structuring_Flag'. These flags, along with existing 'pep_flag' and 'sanctions_flag', are used to compute a 'Risk_Score' and assign a 'Risk_Category' (Low, Medium, High) to each transaction. Additionally, the workflow identifies high-risk counterparties by filtering for 'High' risk category transactions, summarizing by 'counterparty_name', and joining this back to the main data stream to create a 'High_Risk_Counterparty_Flag'.
+The processed data, including all calculated risk metrics, is outputted to an Excel file named 'AML Result.xlsx'. Concurrently, the workflow generates several report components: overall KPIs (total transactions, customers, high-risk customers, etc.), a pie chart showing transactions by risk level, a donut chart for region-wise transaction distribution, a bar chart illustrating monthly suspicious transaction trends, and a table listing the top 10 high-risk customers. These report elements are then combined and rendered into a single PDF document titled 'Anti-Money Laundering Report'.]]></Text>
+          <Font name="Arial" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="230" g="247" b="249" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1626" y="1038" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="1746" y="1038" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="true" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="true" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Layout" selected="True" Alignment="Center" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="320" y="200" width="931" height="639" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Data Processing</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="30" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Data Processing</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="330" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[amount_gbp] &gt; (0.5 * [annual_income])" field="Large Transaction Compared to Income" size="1" type="Bool" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Large Transaction Compared to Income = [amount_gbp] > (0.5 * [annual_income])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="450" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&lt;</Operator>
+                <Field>amount_gbp</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2026-01-27 02:20:57</PeriodDate>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>10000</Operand>
+                  <StartDate>2026-01-27 02:20:57</StartDate>
+                  <EndDate>2026-01-27 02:20:57</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[amount_gbp] &lt; 10000</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="570" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="customer_id" order="Ascending" />
+                <Field field="transaction_date" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>customer_id - Ascending
+transaction_date - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="690" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name>transaction_id</UpdateField_Name>
+              <CreateField_Name>DaysSinceLastTransaction</CreateField_Name>
+              <CreateField_Type>Int32</CreateField_Type>
+              <CreateField_Size>4</CreateField_Size>
+              <OtherRows>NULL</OtherRows>
+              <NumRows value="1" />
+              <Expression>DateTimeDiff([transaction_date], [Row-1:transaction_date], 'days')</Expression>
+              <GroupByFields>
+                <Field field="customer_id" />
+              </GroupByFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeDiff([transaction_date], [Row-1:transaction_date], 'd...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="810" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name>transaction_id</UpdateField_Name>
+              <CreateField_Name>Consecutive_Transactions_2Day</CreateField_Name>
+              <CreateField_Type>Int32</CreateField_Type>
+              <CreateField_Size>4</CreateField_Size>
+              <OtherRows>NULL</OtherRows>
+              <NumRows value="1" />
+              <Expression>IF IsNull([DaysSinceLastTransaction]) THEN 1 ELSEIF [DaysSinceLastTransaction] &lt;= 2 THEN [Row-1:Consecutive_Transactions_2Day] + 1 ELSE 1 ENDIF</Expression>
+              <GroupByFields>
+                <Field field="customer_id" />
+              </GroupByFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>IF IsNull([DaysSinceLastTransaction]) THEN 1 ELSEIF [DaysSinc...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="690" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="transaction_id" />
+                <Field field="customer_id" />
+                <Field field="transaction_date" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="transaction_id" />
+                <Field field="customer_id" />
+                <Field field="transaction_date" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_transaction_id" selected="False" />
+                    <SelectField field="Right_customer_id" selected="False" />
+                    <SelectField field="Right_transaction_date" selected="False" />
+                    <SelectField field="Right_amount_gbp" selected="True" rename="Right_amount_gbp" input="Right_" />
+                    <SelectField field="Right_currency" selected="True" rename="Right_currency" input="Right_" />
+                    <SelectField field="Right_transaction_type" selected="True" rename="Right_transaction_type" input="Right_" />
+                    <SelectField field="Right_payment_channel" selected="True" rename="Right_payment_channel" input="Right_" />
+                    <SelectField field="Right_counterparty_country" selected="True" rename="Right_counterparty_country" input="Right_" />
+                    <SelectField field="Right_counterparty_name" selected="True" rename="Right_counterparty_name" input="Right_" />
+                    <SelectField field="Right_account_balance_after" selected="True" rename="Right_account_balance_after" input="Right_" />
+                    <SelectField field="Right_is_international" selected="True" rename="Right_is_international" input="Right_" />
+                    <SelectField field="Right_is_high_risk_country" selected="True" rename="Right_is_high_risk_country" input="Right_" />
+                    <SelectField field="Right_transaction_time" selected="True" rename="Right_transaction_time" input="Right_" />
+                    <SelectField field="Right_full_name" selected="True" rename="Right_full_name" input="Right_" />
+                    <SelectField field="Right_date_of_birth" selected="True" rename="Right_date_of_birth" input="Right_" />
+                    <SelectField field="Right_occupation" selected="True" rename="Right_occupation" input="Right_" />
+                    <SelectField field="Right_annual_income" selected="True" rename="Right_annual_income" input="Right_" />
+                    <SelectField field="Right_customer_type" selected="True" rename="Right_customer_type" input="Right_" />
+                    <SelectField field="Right_account_open_date" selected="True" rename="Right_account_open_date" input="Right_" />
+                    <SelectField field="Right_pep_flag" selected="True" rename="Right_pep_flag" input="Right_" />
+                    <SelectField field="Right_sanctions_flag" selected="True" rename="Right_sanctions_flag" input="Right_" />
+                    <SelectField field="Right_risk_rating" selected="True" rename="Right_risk_rating" input="Right_" />
+                    <SelectField field="Right_address_country" selected="True" rename="Right_address_country" input="Right_" />
+                    <SelectField field="Right_Large Transaction Compared to Income" selected="True" rename="Right_Large Transaction Compared to Income" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="450" y="594" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="customer_id" action="GroupBy" rename="customer_id" />
+                <SummarizeField field="amount_gbp" action="Avg" rename="Avg_amount_gbp" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="606" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="customer_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="customer_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_customer_id" selected="False" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="822" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IIF([is_high_risk_country], 1, 0)" field="High_Risk_Country_Transaction" size="4" type="Int32" />
+                <FormulaField expression="IIF(DateTimeDiff([transaction_date], [account_open_date], 'days') &lt; 30 AND [amount_gbp] &gt; 5000, 1, 0)" field="New_Account_High_Activity" size="4" type="Int32" />
+                <FormulaField expression="IIF([amount_gbp] &gt; (3 * [Avg_amount_gbp]), 1, 0)" field="Isolation_Forest_Anomaly_Flag" size="4" type="Int32" />
+                <FormulaField expression="IIF(IsNull([Consecutive_Transactions_2Day]) OR [Consecutive_Transactions_2Day] &lt;= 1, 0, 1)" field="Frequent_Structuring_Flag" size="4" type="Int32" />
+                <FormulaField expression="IIF([High_Risk_Country_Transaction], 30, 0) + IIF([New_Account_High_Activity], 20, 0) + IIF([Isolation_Forest_Anomaly_Flag], 50, 0) + IIF([pep_flag], 40, 0) + IIF([sanctions_flag], 100, 0) + IIF([Frequent_Structuring_Flag], 25, 0)" field="Risk_Score" size="4" type="Int32" />
+                <FormulaField expression="IF [Risk_Score] &lt;= 39 THEN 'Low' ELSEIF [Risk_Score] &lt;= 69 THEN 'Medium' ELSE 'High' ENDIF" field="Risk_Category" size="10" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>High_Risk_Country_Transaction = IIF([is_high_risk_country], 1, 0)
+New_Account_Hi...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="942" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Risk_Category] = "High"</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>[Risk_Category] = "High"</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1062" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="counterparty_name" action="GroupBy" rename="counterparty_name" />
+                <SummarizeField field="transaction_id" action="Count" rename="Count_transaction_id" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1182" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Count_transaction_id] &gt; 1</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="942" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="counterparty_name" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="counterparty_name" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_counterparty_name" selected="False" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1062" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IIF(IsNull([Right_counterparty_name]), 0, 1)" field="High_Risk_Counterparty_Flag" size="4" type="Int32" />
+                <FormulaField expression="([High_Risk_Country_Transaction] * 30) + ([New_Account_High_Activity] * 20) + ([Isolation_Forest_Anomaly_Flag] * 50) + (IIF([pep_flag], 1, 0) * 40) + (IIF([sanctions_flag], 1, 0) * 100) + ([Frequent_Structuring_Flag] * 25) + ([High_Risk_Counterparty_Flag] * 40)" field="Risk_Score" size="4" type="Int32" />
+                <FormulaField expression="IF [Risk_Score] &lt;= 39 THEN 'Low' ELSEIF [Risk_Score] &lt;= 69 THEN 'Medium' ELSE 'High' ENDIF" field="Risk_Category" size="10" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>High_Risk_Counterparty_Flag = IIF(IsNull([Right_counterparty_name]), 0, 1)
+Risk_...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1182" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1328" y="200" width="711" height="609" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Charting and Reporting</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="30" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Charting and Reporting</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1518" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="transaction_id" action="Count" rename="Total Transactions" />
+                <SummarizeField field="customer_id" action="CountDistinct" rename="Total Customers" />
+                <SummarizeField field="customer_id" action="CountDistinctNonNull" rename="Total High Risk Customers" />
+                <SummarizeField field="transaction_id" action="CountNonNull" rename="Total High-Risk Country Transfers" />
+                <SummarizeField field="transaction_id" action="CountNonNull" rename="Total Anomalies" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1458" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Risk_Category" action="GroupBy" rename="Risk_Category" />
+                <SummarizeField field="transaction_id" action="Count" rename="Count_Transactions" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1362" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Risk_Category] = 'High'</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1494" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="counterparty_country" action="GroupBy" rename="counterparty_country" />
+                <SummarizeField field="transaction_id" action="Count" rename="Count_Transactions" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1494" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeFormat([transaction_date], '%Y-%m')" field="Transaction_Month" size="7" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Transaction_Month = DateTimeFormat([transaction_date], '%Y-%m')
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1626" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Transaction_Month" action="GroupBy" rename="Transaction_Month" />
+                <SummarizeField field="transaction_id" action="Count" rename="Count_Transactions" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1338" y="677" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="customer_id" action="GroupBy" rename="customer_id" />
+                <SummarizeField field="full_name" action="GroupBy" rename="full_name" />
+                <SummarizeField field="Risk_Score" action="Sum" rename="Total_Risk_Score" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1434" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Total_Risk_Score" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Total_Risk_Score - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="1566" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>First</Mode>
+              <N>10</N>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>First 10 rows</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="PlotlyCharting">
+            <Position x="1614" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ChartingFields>
+                <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+                  <type>pie</type>
+                  <mode>markers</mode>
+                  <xsrc>counterparty_country</xsrc>
+                  <marker>
+                    <size>6</size>
+                    <line>
+                      <width>2</width>
+                    </line>
+                  </marker>
+                  <orientation>v</orientation>
+                  <ysrc>Count_Transactions</ysrc>
+                  <valuessrc>Count_Transactions</valuessrc>
+                  <labelssrc>counterparty_country</labelssrc>
+                  <hole>0.4</hole>
+                  <textinfo>label+percent</textinfo>
+                  <sort>true</sort>
+                  <hoverinfo>percent+label+value</hoverinfo>
+                </Traces>
+                <Layout>
+                  <title>
+                    <text>
+                    </text>
+                  </title>
+                  <font>
+                    <family>sans-serif</family>
+                    <size>12</size>
+                  </font>
+                  <autosize>false</autosize>
+                  <width>700</width>
+                  <height>849</height>
+                  <showlegend>true</showlegend>
+                  <hovermode>closest</hovermode>
+                  <xaxis>
+                    <range>-0.5</range>
+                    <range>9.5</range>
+                    <autorange>true</autorange>
+                    <title>
+                      <text>counterparty_country</text>
+                    </title>
+                    <type>category</type>
+                  </xaxis>
+                  <yaxis>
+                    <range>0</range>
+                    <range>94.736842105263165</range>
+                    <autorange>true</autorange>
+                    <title>
+                      <text>Count_Transactions</text>
+                    </title>
+                    <type>linear</type>
+                  </yaxis>
+                  <margin>
+                    <pad>0</pad>
+                    <t>100</t>
+                    <b>80</b>
+                    <l>80</l>
+                    <r>80</r>
+                  </margin>
+                  <legend>
+                    <font>
+                      <size>12</size>
+                    </font>
+                    <borderwidth>0</borderwidth>
+                  </legend>
+                </Layout>
+              </ChartingFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Region wise - Donut Chart</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="PlotlyCharting">
+            <Position x="1746" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ChartingFields>
+                <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+                  <type>bar</type>
+                  <mode>markers</mode>
+                  <autocolorscale>true</autocolorscale>
+                  <orientation>v</orientation>
+                  <xsrc>Transaction_Month</xsrc>
+                  <ysrc>Count_Transactions</ysrc>
+                  <boxpoints>false</boxpoints>
+                  <textposition>None</textposition>
+                  <marker>
+                    <line>
+                      <width>0</width>
+                    </line>
+                    <color>#1f77b4</color>
+                  </marker>
+                  <hoverinfo>x+y</hoverinfo>
+                  <textfont>
+                    <size>12</size>
+                  </textfont>
+                </Traces>
+                <Layout>
+                  <title>
+                    <text>
+                    </text>
+                  </title>
+                  <font>
+                    <family>sans-serif</family>
+                    <size>12</size>
+                  </font>
+                  <autosize>false</autosize>
+                  <width>700</width>
+                  <height>849</height>
+                  <showlegend>false</showlegend>
+                  <hovermode>closest</hovermode>
+                  <xaxis>
+                    <range>2023-09-17</range>
+                    <range>2026-01-15</range>
+                    <autorange>true</autorange>
+                    <title>
+                      <text>&lt;b&gt;Transaction Month&lt;/b&gt;</text>
+                    </title>
+                    <type>date</type>
+                    <tickfont>
+                      <size>12</size>
+                    </tickfont>
+                    <nticks>0</nticks>
+                    <showline>true</showline>
+                    <showgrid>true</showgrid>
+                  </xaxis>
+                  <yaxis>
+                    <range>0</range>
+                    <range>48.421052631578945</range>
+                    <autorange>true</autorange>
+                    <title>
+                      <text>&lt;b&gt;Count Transactions&lt;/b&gt;</text>
+                    </title>
+                    <type>linear</type>
+                    <showline>true</showline>
+                  </yaxis>
+                  <barnorm>
+                  </barnorm>
+                  <barmode>overlay</barmode>
+                  <margin>
+                    <pad>0</pad>
+                    <t>100</t>
+                    <b>80</b>
+                    <l>80</l>
+                    <r>80</r>
+                  </margin>
+                  <plot_bgcolor>rgb(255, 255, 255)</plot_bgcolor>
+                  <legend>
+                    <font>
+                      <size>12</size>
+                    </font>
+                    <borderwidth>0</borderwidth>
+                  </legend>
+                </Layout>
+              </ChartingFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Monthly Suspicious Trend</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+            <Position x="1674" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TableMode>Basic</TableMode>
+              <GroupingFields orderChanged="False" />
+              <Width>100%</Width>
+              <ShowHeader value="True" />
+              <ShowBarGraph value="False" />
+              <TableFields orderChanged="False">
+                <Field name="customer_id" selected="True" Alignment="Left" />
+                <Field name="full_name" selected="True" Alignment="Left" />
+                <Field name="Total_Risk_Score" selected="True" Alignment="Right" />
+                <Field name="*Unknown" selected="True" Alignment="Right" />
+              </TableFields>
+              <TableStyles>
+                <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+                <Style Name="Header" Font="B-Times New Roman" Size="14" TextColor="#000000" BackColor="#dbdbdb" />
+                <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+                <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+              </TableStyles>
+              <StyleRules>
+                <Rule Name="41391f74-572a-46a4-8c56-90639f9712ff">
+                  <RowRule value="True" />
+                  <HighPrecedence value="False" />
+                  <Field />
+                  <Test>Always</Test>
+                  <ApplyTo>Data</ApplyTo>
+                  <SimpleVar />
+                  <SimpleOp>==</SimpleOp>
+                  <SimpleConst>1</SimpleConst>
+                  <Formula>1</Formula>
+                  <Style Font="--Times New Roman" Size="12" />
+                  <PrettyName>Row Rule 1</PrettyName>
+                </Rule>
+              </StyleRules>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Top 10 High Risk Customers</AnnotationText>
+              <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+            <Position x="1638" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TableMode>Basic</TableMode>
+              <GroupingFields orderChanged="False" />
+              <Width>100%</Width>
+              <ShowHeader value="True" />
+              <ShowBarGraph value="False" />
+              <TableFields orderChanged="False">
+                <Field name="Total Transactions" selected="True" Alignment="Right" />
+                <Field name="Total Customers" selected="True" Alignment="Right" />
+                <Field name="Total High Risk Customers" selected="True" Alignment="Right" />
+                <Field name="Total High-Risk Country Transfers" selected="True" Alignment="Right" />
+                <Field name="Total Anomalies" selected="True" Alignment="Right" />
+                <Field name="*Unknown" selected="True" Alignment="Right" />
+              </TableFields>
+              <TableStyles>
+                <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+                <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+                <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+                <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+              </TableStyles>
+              <StyleRules />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Overall KPIs</AnnotationText>
+              <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="PlotlyCharting">
+            <Position x="1578" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ChartingFields>
+                <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+                  <type>pie</type>
+                  <mode>lines</mode>
+                  <xsrc>Count_Transactions</xsrc>
+                  <ysrc>Risk_Category</ysrc>
+                  <orientation>v</orientation>
+                  <boxpoints>false</boxpoints>
+                  <decreasing>
+                    <line>
+                      <color>#7f7f7f</color>
+                    </line>
+                    <fillcolor>rgba(127, 127, 127, 0.5)</fillcolor>
+                  </decreasing>
+                  <increasing>
+                    <line>
+                      <color>#17becf</color>
+                    </line>
+                    <fillcolor>rgba(23, 190, 207, 0.5)</fillcolor>
+                  </increasing>
+                  <highsrc>Risk_Category</highsrc>
+                  <lowsrc>Count_Transactions</lowsrc>
+                  <autocolorscale>true</autocolorscale>
+                  <zsrc>Risk_Category</zsrc>
+                  <labelssrc>Risk_Category</labelssrc>
+                  <valuessrc>Count_Transactions</valuessrc>
+                  <marker>
+                    <line>
+                      <width>3</width>
+                    </line>
+                  </marker>
+                  <textinfo>label+percent</textinfo>
+                  <hole>0</hole>
+                </Traces>
+                <Layout>
+                  <title>
+                    <text>
+                    </text>
+                  </title>
+                  <font>
+                    <family>sans-serif</family>
+                    <size>24</size>
+                  </font>
+                  <autosize>false</autosize>
+                  <width>700</width>
+                  <height>849</height>
+                  <showlegend>false</showlegend>
+                  <hovermode>closest</hovermode>
+                  <xaxis>
+                    <range>326</range>
+                    <range>432</range>
+                    <autorange>true</autorange>
+                    <title>
+                      <text>Count_Transactions</text>
+                    </title>
+                    <type>linear</type>
+                  </xaxis>
+                  <yaxis>
+                    <range>-0.055555555555555573</range>
+                    <range>1.0555555555555556</range>
+                    <autorange>true</autorange>
+                    <title>
+                      <text>Risk_Category</text>
+                    </title>
+                    <type>category</type>
+                  </yaxis>
+                  <margin>
+                    <pad>0</pad>
+                    <t>100</t>
+                    <b>80</b>
+                    <l>80</l>
+                    <r>80</r>
+                  </margin>
+                  <paper_bgcolor>rgb(255, 255, 255)</paper_bgcolor>
+                  <legend>
+                    <font>
+                      <size>13</size>
+                    </font>
+                    <borderwidth>3</borderwidth>
+                    <bgcolor>rgb(215, 206, 206)</bgcolor>
+                  </legend>
+                </Layout>
+              </ChartingFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Transactions by Risk Level</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="ReportHeader">
+            <Position x="1758" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="HeaderText">Overall KPIs</Value>
+              <Value name="OutputFormat">yyyy-MM-dd hh:mm:ss</Value>
+              <Value name="Language">English</Value>
+              <Value name="IncludeDate">False</Value>
+              <Value name="ImageFile">
+              </Value>
+              <Value name="OwnLogo">false</Value>
+              <Value name="IncludeImage">False</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="ReportHeader\Supporting_Macros\RHEngine.yxmc" EngineDll="Macro" EngineDllEntryPoint="ReportHeader\Supporting_Macros\RHEngine.yxmc" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+            <Position x="1866" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupingMode>PerRecord</GroupingMode>
+              <PreserveSourceFields value="False" />
+              <Orientation>V</Orientation>
+              <Separator>Breaking</Separator>
+              <Width>100%</Width>
+              <Height />
+              <BorderStyle Enabled="false" Color="#000000" Width="2" />
+              <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+              <Padding>0</Padding>
+              <LayoutFields orderChanged="True">
+                <Field name="Header" selected="True" Alignment="Center" />
+                <Field name="Table" selected="True" Alignment="Center" Width="" />
+              </LayoutFields>
+              <MergeIntoTable value="False" />
+              <SectionNameForGroup />
+              <SectionNameForAllRecords />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vertical Layout
+Section Breaks
+Each Individual Record</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+        </Node>
+        <Node ToolID="57">
+          <GuiSettings Plugin="ReportHeader">
+            <Position x="1794" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="HeaderText">Top 10 High Risk Customers</Value>
+              <Value name="OutputFormat">yyyy-MM-dd hh:mm:ss</Value>
+              <Value name="Language">English</Value>
+              <Value name="IncludeDate">False</Value>
+              <Value name="ImageFile">
+              </Value>
+              <Value name="OwnLogo">false</Value>
+              <Value name="IncludeImage">False</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="ReportHeader\Supporting_Macros\RHEngine.yxmc" EngineDll="Macro" EngineDllEntryPoint="ReportHeader\Supporting_Macros\RHEngine.yxmc" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+            <Position x="1806" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupingMode>PerRecord</GroupingMode>
+              <PreserveSourceFields value="False" />
+              <Orientation>V</Orientation>
+              <Separator>Breaking</Separator>
+              <Width>100%</Width>
+              <Height />
+              <BorderStyle Enabled="false" Color="#000000" Width="2" />
+              <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+              <Padding>0</Padding>
+              <LayoutFields orderChanged="True">
+                <Field name="Header" selected="True" Alignment="Center" />
+                <Field name="Chart" selected="True" Width="" Alignment="Center" />
+              </LayoutFields>
+              <MergeIntoTable value="False" />
+              <SectionNameForGroup />
+              <SectionNameForAllRecords />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vertical Layout
+Section Breaks
+Each Individual Record</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+            <Position x="1926" y="678" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupingMode>PerRecord</GroupingMode>
+              <PreserveSourceFields value="False" />
+              <Orientation>V</Orientation>
+              <Separator>Breaking</Separator>
+              <Width>100%</Width>
+              <Height />
+              <BorderStyle Enabled="false" Color="#000000" Width="2" />
+              <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+              <Padding>0</Padding>
+              <LayoutFields orderChanged="True">
+                <Field name="Header" selected="True" Alignment="Center" />
+                <Field name="Table" selected="True" Alignment="Center" Width="" />
+              </LayoutFields>
+              <MergeIntoTable value="False" />
+              <SectionNameForGroup />
+              <SectionNameForAllRecords />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vertical Layout
+Section Breaks
+Each Individual Record</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="ReportHeader">
+            <Position x="1698" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="HeaderText">Transactions by Risk Level</Value>
+              <Value name="OutputFormat">yyyy-MM-dd hh:mm:ss</Value>
+              <Value name="Language">English</Value>
+              <Value name="IncludeDate">False</Value>
+              <Value name="ImageFile">
+              </Value>
+              <Value name="OwnLogo">false</Value>
+              <Value name="IncludeImage">False</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="ReportHeader\Supporting_Macros\RHEngine.yxmc" EngineDll="Macro" EngineDllEntryPoint="ReportHeader\Supporting_Macros\RHEngine.yxmc" />
+        </Node>
+        <Node ToolID="69">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+            <Position x="1938" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupingMode>PerRecord</GroupingMode>
+              <PreserveSourceFields value="False" />
+              <Orientation>V</Orientation>
+              <Separator>Breaking</Separator>
+              <Width>100%</Width>
+              <Height />
+              <BorderStyle Enabled="false" Color="#000000" Width="2" />
+              <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+              <Padding>0</Padding>
+              <LayoutFields orderChanged="True">
+                <Field name="Header" selected="True" Alignment="Center" />
+                <Field name="Chart" selected="True" Width="" Alignment="Center" />
+              </LayoutFields>
+              <MergeIntoTable value="False" />
+              <SectionNameForGroup />
+              <SectionNameForAllRecords />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vertical Layout
+Section Breaks
+Each Individual Record</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="ReportHeader">
+            <Position x="1866" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="HeaderText">Monthly Suspicious Trend</Value>
+              <Value name="OutputFormat">yyyy-MM-dd hh:mm:ss</Value>
+              <Value name="Language">English</Value>
+              <Value name="IncludeDate">False</Value>
+              <Value name="ImageFile">
+              </Value>
+              <Value name="OwnLogo">false</Value>
+              <Value name="IncludeImage">False</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="ReportHeader\Supporting_Macros\RHEngine.yxmc" EngineDll="Macro" EngineDllEntryPoint="ReportHeader\Supporting_Macros\RHEngine.yxmc" />
+        </Node>
+        <Node ToolID="65">
+          <GuiSettings Plugin="ReportHeader">
+            <Position x="1722" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="HeaderText">Region wise - Donut Chart</Value>
+              <Value name="OutputFormat">yyyy-MM-dd hh:mm:ss</Value>
+              <Value name="Language">English</Value>
+              <Value name="IncludeDate">False</Value>
+              <Value name="ImageFile">
+              </Value>
+              <Value name="OwnLogo">false</Value>
+              <Value name="IncludeImage">False</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="ReportHeader\Supporting_Macros\RHEngine.yxmc" EngineDll="Macro" EngineDllEntryPoint="ReportHeader\Supporting_Macros\RHEngine.yxmc" />
+        </Node>
+        <Node ToolID="66">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+            <Position x="1842" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupingMode>PerRecord</GroupingMode>
+              <PreserveSourceFields value="False" />
+              <Orientation>V</Orientation>
+              <Separator>Breaking</Separator>
+              <Width>100%</Width>
+              <Height />
+              <BorderStyle Enabled="false" Color="#000000" Width="2" />
+              <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+              <Padding>0</Padding>
+              <LayoutFields orderChanged="True">
+                <Field name="Header" selected="True" Alignment="Center" />
+                <Field name="Chart" selected="True" Width="" Alignment="Center" />
+              </LayoutFields>
+              <MergeIntoTable value="False" />
+              <SectionNameForGroup />
+              <SectionNameForAllRecords />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vertical Layout
+Section Breaks
+Each Individual Record</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Join" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="3" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="3" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="80" Connection="Report Layout" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output13" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="26" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="True" />
+      <Destination ToolID="26" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="True" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Join" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="True" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="True" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="65" Connection="Report Layout" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="68" Connection="Report Layout" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="57" Connection="Report Layout" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="54" Connection="Report Layout" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="60" Connection="Report Layout" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output13" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output13" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output13" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output13" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output13" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Automated AML Reporting</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="cc38c194-d1ff-4ebb-be22-508d4232127a" />
+      <Telemetry>
+        <PreviousWorkflowId value="ef77d447-71c8-4c2c-b922-93acd7f00077" />
+        <OriginWorkflowId value="ef77d447-71c8-4c2c-b922-93acd7f00077" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
