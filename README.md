@@ -1,5 +1,5 @@
 # UK Retail Banking AML Monitoring Project
-
+This Alteryx Designer workflow automates the detection of money laundering typologies in UK retail banking. It ingests transaction and customer data, applies rule-based and proxy machine learning techniques, calculates risk scores, and outputs a detailed Excel dataset along with a multi-page PDF report for compliance review.
 ## 1. Introduction
 
 This document provides a comprehensive overview of an advanced Anti-Money Laundering (AML) monitoring system designed for a UK retail banking context. Developed entirely within Alteryx Designer, this project demonstrates a robust solution for identifying suspicious financial activities, calculating transaction-level risk scores, and generating detailed reports for compliance and operational review. It showcases sophisticated data processing, feature engineering, rule-based detection, and proxies for advanced machine learning and network analysis.
@@ -151,3 +151,4 @@ This project provides a strong foundation, but several areas can be explored for
 - **Case Management System Integration**: Develop direct API integrations with AML case management systems for automated alert creation and workflow management.
 - **Performance Optimization for Big Data**: Further optimize the workflow for extremely large datasets by leveraging advanced In-Database processing techniques and distributed computing.
 - **User Interface Development**: Create an Alteryx Analytic App or deploy the workflow to Alteryx Server to provide a user-friendly interface for parameter input and on-demand execution.
+
